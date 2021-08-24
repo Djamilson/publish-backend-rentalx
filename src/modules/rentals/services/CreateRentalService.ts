@@ -99,9 +99,8 @@ class CreateRentalService {
       car_id,
     );
 
-    const userUnavailables = await this.rentalsRepository.listOpenRentalByUserId(
-      user_id,
-    );
+    const userUnavailables =
+      await this.rentalsRepository.listOpenRentalByUserId(user_id);
 
     const checkRentalCar = this.dateProvider.checkDateAvaileble(
       myArrayDate,
@@ -160,7 +159,7 @@ class CreateRentalService {
         name: userExists.person.name,
         email: userExists.person.email,
       },
-      subject: '[RentalX] Reserva realizda com sucesso',
+      subject: '[RentalX] Reserva realizada com sucesso',
       templateData: {
         file: createRentalTemplate,
         variables: {

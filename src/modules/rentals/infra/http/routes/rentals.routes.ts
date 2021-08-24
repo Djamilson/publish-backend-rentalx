@@ -9,7 +9,8 @@ import { ensureAuthenticated } from '@modules/users/infra/http/middleware/ensure
 const rentalsRouter = Router();
 const rentalsController = new RentalsController();
 const syncPullRentalsController = new SyncPullRentalsController();
-const listRentalByIdAndExpectReturnDateController = new ListRentalByIdAndExpectReturnDateController();
+const listRentalByIdAndExpectReturnDateController =
+  new ListRentalByIdAndExpectReturnDateController();
 
 rentalsRouter.use(ensureAuthenticated);
 
