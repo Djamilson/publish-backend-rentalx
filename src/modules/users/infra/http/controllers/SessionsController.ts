@@ -24,7 +24,7 @@ export default class SessionsController {
         token,
         refreshToken,
       });
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

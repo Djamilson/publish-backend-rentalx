@@ -33,14 +33,8 @@ export default class AddressesController {
     try {
       const user_id = req.user.id;
 
-      const {
-        number,
-        street,
-        complement,
-        zip_code,
-        neighborhood,
-        city_id,
-      } = req.body;
+      const { number, street, complement, zip_code, neighborhood, city_id } =
+        req.body;
 
       const createAddress = container.resolve(CreateAddressService);
       // const createUserGroups = container.resolve(CreateUserGroupsService);
@@ -55,7 +49,7 @@ export default class AddressesController {
         city_id,
       });
       return res.json(classToClass(address));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -86,7 +80,7 @@ export default class AddressesController {
         city_id,
       });
       return res.json(classToClass(address));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

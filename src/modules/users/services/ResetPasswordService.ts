@@ -48,7 +48,7 @@ class ResetPasswordService {
       await this.usersRepository.save(user);
 
       return this.forgotTokensRepository.delete(userToken.id);
-    } catch (err) {
+    } catch (err: any) {
       if (err) {
         if (err.name === 'TokenExpiredError') {
           throw new AppError('token.invalid!', 401);

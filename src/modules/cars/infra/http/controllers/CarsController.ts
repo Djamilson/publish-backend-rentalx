@@ -21,7 +21,7 @@ export default class CarsController {
       const cars = await listCars.execute();
 
       return res.status(200).json(classToClass(cars));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -64,7 +64,7 @@ export default class CarsController {
       });
 
       return res.json(classToClass(car));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

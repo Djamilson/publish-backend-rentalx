@@ -23,7 +23,7 @@ export default class UsersController {
         user_id,
       });
       return res.json(classToClass(userLogado));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -53,7 +53,7 @@ export default class UsersController {
       });
 
       return res.json(classToClass(user));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

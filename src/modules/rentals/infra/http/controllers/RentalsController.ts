@@ -16,7 +16,7 @@ export default class RentalsController {
         user_id,
       });
       return res.json(classToClass(rentals));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -38,7 +38,7 @@ export default class RentalsController {
         startDate: new Date(startDate),
       });
       return res.json(classToClass(rental));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

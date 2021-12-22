@@ -40,7 +40,7 @@ export function ensureAuthenticated(
     };
 
     return next();
-  } catch (err) {
+  } catch (err: any) {
     if (err && err.name === 'TokenExpiredError') {
       throw new AppError(err, 401);
     }

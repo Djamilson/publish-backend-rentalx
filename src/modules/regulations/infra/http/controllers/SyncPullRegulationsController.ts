@@ -10,7 +10,7 @@ class SyncPullRegulationsController {
 
       const { regulations } = req.query;
 
-      const p = (regulations as unknown) as string;
+      const p = regulations as unknown as string;
 
       const syncPullRentals = await syncPullRegulation.execute({
         regulations:
@@ -30,7 +30,7 @@ class SyncPullRegulationsController {
           regulations: syncPullRentals,
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

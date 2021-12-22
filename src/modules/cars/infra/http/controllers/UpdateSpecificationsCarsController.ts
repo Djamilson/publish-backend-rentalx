@@ -18,7 +18,7 @@ class UpdateSpecificationsCarsController {
       });
 
       return res.json(classToClass(car));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

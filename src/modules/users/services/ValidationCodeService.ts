@@ -40,7 +40,7 @@ class ValidationCodeService {
       verify(userToken.token, authConfig.jwt.secretForgotToken);
 
       return { token: userToken.token };
-    } catch (err) {
+    } catch (err: any) {
       if (err) {
         if (err.name === 'TokenExpiredError') {
           throw new AppError('token.invalid!', 401);

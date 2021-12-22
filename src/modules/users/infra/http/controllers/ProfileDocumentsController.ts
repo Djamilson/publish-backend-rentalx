@@ -21,7 +21,7 @@ export default class ProfileDocumentsController {
       });
 
       return res.json(classToClass(user));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

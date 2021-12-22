@@ -13,7 +13,7 @@ export default class RegulationsController {
 
       const regulations = await listRegulation.execute();
       return res.json(classToClass(regulations));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -30,7 +30,7 @@ export default class RegulationsController {
         regulation,
       });
       return res.json(classToClass(rental));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -50,7 +50,7 @@ export default class RegulationsController {
       });
 
       return res.json(classToClass(rental));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

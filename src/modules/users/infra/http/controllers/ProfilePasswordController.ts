@@ -10,7 +10,7 @@ export default class ProfileController {
       const user_id = req.user.id;
       const { old_password, password } = req.body;
 
-        const updatePasswordProfile = container.resolve(
+      const updatePasswordProfile = container.resolve(
         UpdateProfilePasswordService,
       );
 
@@ -21,7 +21,7 @@ export default class ProfileController {
       });
 
       return res.json(classToClass(user));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

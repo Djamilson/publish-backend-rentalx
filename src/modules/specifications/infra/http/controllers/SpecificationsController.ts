@@ -23,7 +23,7 @@ export default class SpecificationsController {
       const specifications = await listSpecifications.execute();
 
       return res.status(200).json(classToClass(specifications));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -42,7 +42,7 @@ export default class SpecificationsController {
         type,
       });
       return res.json(classToClass(specification));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

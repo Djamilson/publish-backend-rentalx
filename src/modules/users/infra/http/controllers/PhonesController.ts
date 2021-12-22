@@ -18,7 +18,7 @@ export default class PhonesController {
         phoneId,
       });
       return res.json(classToClass(phone));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -34,7 +34,7 @@ export default class PhonesController {
         user_id,
       });
       return res.json(classToClass(phone));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -54,7 +54,7 @@ export default class PhonesController {
         user_id,
       });
       return res.json(classToClass(newPhone));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -72,7 +72,7 @@ export default class PhonesController {
         person_id,
       });
       return res.json(classToClass(newPhone));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

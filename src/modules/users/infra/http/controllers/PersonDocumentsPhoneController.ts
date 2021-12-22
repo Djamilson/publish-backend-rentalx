@@ -14,7 +14,7 @@ export default class PersonDocumentsPhoneController {
       const person = await updatePerson.execute({ user_id, ...req.body });
 
       return res.json(classToClass(person));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

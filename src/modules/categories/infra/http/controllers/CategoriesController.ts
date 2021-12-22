@@ -21,7 +21,7 @@ export default class CategoriesController {
       const categories = await listCategories.execute();
 
       return res.status(200).json(classToClass(categories));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
@@ -39,7 +39,7 @@ export default class CategoriesController {
         description,
       });
       return res.json(classToClass(category));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

@@ -13,7 +13,7 @@ export default class GroupController {
       const group = await createGroup.execute({ name, description });
 
       return res.json(classToClass(group));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

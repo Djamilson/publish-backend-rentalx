@@ -16,7 +16,7 @@ export default class PersonsController {
       });
 
       return res.json(classToClass(person));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

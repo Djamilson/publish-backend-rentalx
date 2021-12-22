@@ -17,7 +17,7 @@ export default class AddresssMainController {
         user_id,
       });
       return res.json(classToClass(phone));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

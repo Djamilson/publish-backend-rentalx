@@ -20,7 +20,7 @@ class UpdateNameSpecificationsController {
         name,
       });
       return res.json(classToClass(specification));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

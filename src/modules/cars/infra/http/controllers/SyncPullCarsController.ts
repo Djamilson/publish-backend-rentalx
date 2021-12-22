@@ -11,7 +11,7 @@ class SyncPullCarsController {
       const { cars } = req.query;
       const user_id = req.user.id;
 
-      const p = (cars as unknown) as string;
+      const p = cars as unknown as string;
 
       const syncPullCars = await syncPullCar.execute({
         user_id,
@@ -32,7 +32,7 @@ class SyncPullCarsController {
           cars: syncPullCars,
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

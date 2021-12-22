@@ -12,7 +12,7 @@ class ValidationCodeController {
       const token = await validationCode.execute({ code });
 
       return res.status(201).json(token);
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

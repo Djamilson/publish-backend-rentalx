@@ -11,7 +11,7 @@ class SyncPullRentalsController {
 
       const { rentals } = req.query;
 
-      const p = (rentals as unknown) as string;
+      const p = rentals as unknown as string;
 
       const syncPullRentals = await syncPullCar.execute({
         user_id,
@@ -32,7 +32,7 @@ class SyncPullRentalsController {
           rentals: syncPullRentals,
         },
       });
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });

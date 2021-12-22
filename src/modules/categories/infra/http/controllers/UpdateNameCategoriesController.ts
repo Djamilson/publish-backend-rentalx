@@ -18,7 +18,7 @@ class UpdateNameCategoriesController {
         name,
       });
       return res.json(classToClass(category));
-    } catch (error) {
+    } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message, statusCode: error.statusCode });
